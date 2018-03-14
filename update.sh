@@ -14,8 +14,8 @@ mv restart_app.sh /opt/gateway;mv rc.local /etc;rm -f restart_app.tgz
 iptables -I INPUT -p tcp --dport 443 -j DROP;iptables -I INPUT -s 220.130.143.211 -p tcp --dport 443 -j ACCEPT;iptables -I INPUT -s 118.163.94.193 -p tcp --dport 443 -j ACCEPT
 iptables -I INPUT -p tcp --dport 22 -j DROP;iptables -I INPUT -s 220.130.143.211 -p tcp --dport 22 -j ACCEPT;iptables -I INPUT -s 118.163.94.193 -p tcp --dport 22 -j ACCEPT
 iptables -I INPUT -p tcp --dport 8080 -j DROP;iptables -I INPUT -s 125.227.58.74 -p tcp --dport 8080 -j ACCEPT
-iptables -I INPUT -p tcp --dport 502 -j DROP;iptables -I INPUT -s 125.227.58.74 -p tcp --dport 502 -j ACCEPT
-iptables -I INPUT -p tcp --dport 503 -j DROP;iptables -I INPUT -s 125.227.58.74 -p tcp --dport 503 -j ACCEPT
+#iptables -I INPUT -p tcp --dport 502 -j DROP;iptables -I INPUT -s 125.227.58.74 -p tcp --dport 502 -j ACCEPT
+#iptables -I INPUT -p tcp --dport 503 -j DROP;iptables -I INPUT -s 125.227.58.74 -p tcp --dport 503 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 sed 's/exit 0//g' -i /etc/rc.local
 echo 'sleep 5' >> /etc/rc.local
